@@ -1,6 +1,6 @@
 import tweepy
 import time
-from keys import *
+#from keys import *
 print("This is my twitter bot")
 
 from os import environ
