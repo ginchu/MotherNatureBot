@@ -20,7 +20,7 @@ ht2 = '#environment'
 ht3 = '#climatechange'
 
 def searchRetweet(n):
-    for tweet in tweepy.Cursor(api.search, q=n).items(5):
+    for tweet in tweepy.Cursor(api.search, q=n, result_type=popular).items(5):
         try:
             # Add \n escape character to print() to organize tweets
             print('\nTweet by: @' + tweet.user.screen_name)
