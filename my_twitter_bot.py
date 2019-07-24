@@ -1,7 +1,7 @@
 import tweepy
 import time
 #from keys import *
-print("This is my twitter bot")
+print("This is my Mother Nature twitter bot")
 
 from os import environ
 CONSUMER_KEY = environ['CONSUMER_KEY']
