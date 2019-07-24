@@ -45,4 +45,3 @@ while True:
     time.sleep(300)
     searchRetweet(ht3)
     time.sleep(300)
-
