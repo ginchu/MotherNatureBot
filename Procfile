@@ -1,1 +1,1 @@
-worker: python mothernaturebot.py
+worker: python mother-nature-bot.py
