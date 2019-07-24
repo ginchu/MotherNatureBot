@@ -15,24 +15,34 @@ api = tweepy.API(auth)
 # We are going to be using this api object to 
 # basically talk to Twitter and read/write data into Twitter
 
-for tweet in tweepy.Cursor(api.search, q='#nature').items(10):
-    try:
-        # Add \n escape character to print() to organize tweets
-        print('\nTweet by: @' + tweet.user.screen_name)
+ht1 = '#nature'
+ht2 = '#environment'
+ht3 = '#climatechange'
 
-        # Retweet tweets as they are found
-        tweet.retweet()
-        print('Retweeted the tweet')
+def searchRetweet(n):
+    for tweet in tweepy.Cursor(api.search, q=n).items(5):
+        try:
+            # Add \n escape character to print() to organize tweets
+            print('\nTweet by: @' + tweet.user.screen_name)
 
-        time.sleep(5)
+            # Retweet tweets as they are found
+            tweet.retweet()
+            print('Retweeted the tweet')
 
-    except tweepy.TweepError as e:
-        print(e.reason)
+            time.sleep(5)
 
-    except StopIteration:
-        break
+        except tweepy.TweepError as e:
+            print(e.reason)
 
-'''while True:
-    reply_to_tweets()
-    time.sleep(15)'''
+        except StopIteration:
+            break
+
+
+while True:
+    searchRetweet(ht1)
+    time.sleep(300)
+    searchRetweet(ht2)
+    time.sleep(300)
+    searchRetweet(ht3)
+    time.sleep(300)
 
