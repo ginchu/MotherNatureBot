@@ -41,7 +41,6 @@ def reply_to_tweets():
                         tweet_mode='extended')
     for mention in reversed(mentions):
         print(str(mention.id) + ' - ' + mention.full_text, flush=True)
-        api.create_favorite(mention.id)
         last_seen_id = mention.id
         store_last_seen_id(last_seen_id, FILE_NAME)
         if '#helloworld' in mention.full_text.lower():
