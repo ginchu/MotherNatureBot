@@ -1,5 +1,5 @@
 import tweepy
-import time
+import time 
 #from keys import *
 print("This is my Mother Nature twitter bot")
 
