@@ -24,7 +24,7 @@ for tweet in tweepy.Cursor(api.search, q='#nature').items(10):
         tweet.retweet()
         print('Retweeted the tweet')
 
-        time.sleep(5)
+        break
 
     except tweepy.TweepError as e:
         print(e.reason)
