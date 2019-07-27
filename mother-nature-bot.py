@@ -22,14 +22,17 @@ ht3 = '#climatechange'
 def searchRetweet(n):
     for tweet in tweepy.Cursor(api.search, q=n, result_type='popular', lang='en').items(5):
         try:
-            # Add \n escape character to print() to organize tweets
             print('\nHashtag: ' + n)
             print('Tweet by: @' + tweet.user.screen_name)
 
-            # Retweet tweets as they are found
-            tweet.retweet()
-            print('Retweeted the tweet')
-
+            if 'kpop' in tweet.full_text.lower() or 'k-pop' in tweet.full_text.lower():
+                # There seems to be a new kpop group named NATURE
+                print('Unrelated tweet, will ignore')
+            else:
+                # Retweet tweets as they are found
+                tweet.retweet()
+                print('Retweeted the tweet')
+            
             time.sleep(30)
 
         except tweepy.TweepError as e:
