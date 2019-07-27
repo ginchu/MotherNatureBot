@@ -20,7 +20,7 @@ ht2 = '#environment'
 ht3 = '#climatechange'
 
 def searchRetweet(n):
-    for tweet in tweepy.Cursor(api.search, q=n, result_type='popular', lang='en').items(5):
+    for tweet in tweepy.Cursor(api.search, q=n, result_type='popular', lang='en', tweet_mode='extended').items(5):
         try:
             print('\nHashtag: ' + n)
             print('Tweet by: @' + tweet.user.screen_name)
