@@ -25,7 +25,7 @@ def searchRetweet(n):
             print('\nHashtag: ' + n)
             print('Tweet by: @' + tweet.user.screen_name)
 
-            if 'kpop' in tweet.full_text.lower() or 'k-pop' in tweet.full_text.lower():
+            if 'kpop' in tweet.full_text.lower() or 'k-pop' in tweet.full_text.lower() or 'NATURE' in tweet.full_text:
                 # There seems to be a new kpop group named NATURE
                 print('Unrelated tweet, will ignore')
             else:
